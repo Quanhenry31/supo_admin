@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import TK2 from '~/components/TK2';
 import TK3 from '~/components/TK3';
+import TK4 from '~/components/TK4';
 function Home() {
   return (
     <Row className="justify-content-between px-5">
@@ -17,6 +18,7 @@ function Home() {
       <Col>
         <TK2 />
       </Col>
+      <TK4 />
     </Row>
   );
 }

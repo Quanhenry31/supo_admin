@@ -16,8 +16,8 @@ const SanPham = () => {
   const [isdelete, setIsdelete] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const debounceValue = useDebounce(searchValue, 1000);
+
   const handleSearch = () => {
-    console.log(debounceValue);
     axios
       .get('http://localhost:5000/products/search?q=' + debounceValue)
       .then((response) => setListOfPosts(response.data.data));
@@ -31,7 +31,6 @@ const SanPham = () => {
     {
       title: 'Name',
       dataIndex: 'name',
-
       render: (text) => <a>{text}</a>,
     },
     {
@@ -53,6 +52,7 @@ const SanPham = () => {
     {
       title: 'Image',
       dataIndex: 'image',
+      render: (imageUrl) => <img src={imageUrl} alt="Product" style={{ width: '100px', height: 'auto' }} />,
     },
     {
       title: 'Quantity',
@@ -60,7 +60,6 @@ const SanPham = () => {
     },
     {
       title: 'Action',
-
       render: (_, record) => (
         <Space size="middle">
           <EyeOutlined />
@@ -109,12 +108,6 @@ const SanPham = () => {
       </div>
     );
   };
-  useEffect(() => {
-    const savedSearchValue = localStorage.getItem('eyeProductId');
-    if (savedSearchValue) {
-      setSearchValue(savedSearchValue);
-    }
-  }, []);
 
   useEffect(() => {
     handleSearch();
@@ -126,6 +119,7 @@ const SanPham = () => {
       setIsdelete(false);
     });
   }, [create, dataUpdate, isdelete]);
+
   return (
     <>
       <Table title={renderHeader} rowKey={'id'} columns={columns} dataSource={listOfPosts} />
@@ -139,4 +133,5 @@ const SanPham = () => {
     </>
   );
 };
+
 export default SanPham;

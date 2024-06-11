@@ -77,8 +77,15 @@ const UpdateProduct = (props) => {
           </Col>
 
           <Col span={48} md={24}>
-            <Form.Item label="Ảnh" name="image" rules={[{ required: true, message: 'Vui lòng chọn ảnh!' }]}>
+            <Form.Item label="Ảnh" rules={[{ required: true, message: 'Vui lòng chọn ảnh!' }]}>
               <Image width={150} height={100} src={dataUpdate?.image} />
+            </Form.Item>
+          </Col>
+
+          <Col span={48} md={24}>
+            <Form.Item label="Ảnh" name="image" rules={[{ required: true, message: 'Vui lòng chọn ảnh!' }]}>
+              {/* <Image width={150} height={100} src={dataUpdate?.image} /> */}
+              <Input />
             </Form.Item>
           </Col>
 

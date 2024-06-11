@@ -3,10 +3,10 @@ import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 
 function Home() {
   const data = [
-    { name: 'Group A', value: 400 },
-    { name: 'Group B', value: 300 },
-    { name: 'Group C', value: 300 },
-    { name: 'Group D', value: 200 },
+    { name: 'Nordic Chair', value: 400 },
+    { name: 'Kruzo Aero Chair', value: 300 },
+    { name: 'Ergonomic Chair', value: 300 },
+    { name: 'Nordic Chair-2', value: 200 },
   ];
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
   const RADIAN = Math.PI / 180;
